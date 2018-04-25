@@ -1,0 +1,28 @@
+This library is a helper library allowing easy and quite efficient syncing of a (game)state across serval devices.
+A major design goal is to allow the state to be compact and open for high speed custom manipulation on large datasets; while keeping in sync.
+The synch method is a sentral server collecting high-level actions distributing these for lockstep running.
+In order to allow this system to work as intended the following workflow/progam design is required:
+
+- Make a gamestate model based on the primitives in Object Collection.
+-- Thse objects must support serializable. 
+--- That is *NO* native pointers must be used anywhere here.
+--- ObjectPointers are allowed, and enouraged.
+--- No floating point numbers are allowed (breaks lockstep on different achitectures)
+-- "Object" fucntionality is implemented on containerlevel; No managed this pointer; rather the systems ObjectPointer is used
+-- Headers: ObjectCollection.h , AllocationHelper.h, ComponentStore.h, ObjectLink2.h, Serialization.h
+
+- Make one or more controll-layer component(s) exposing actions and notifications usefull for manipulating and monitoring the gamestate model.
+-- Could for instance be one controll-layer for development/editing, and one for playing.
+-- All synced programs must use the same action-layer.
+-- All actions must be serializable (se above)
+-- Actions are the only component that are allowed to manipulate the gamestate.
+-- There are no restrictions on the notification data; but thread safety should be kept in mind
+--- That is raw pointers to data is dangerous; but copies and managed pointers are ok.
+-- Headers: ActionProtocol.h, ThreadNotificationSystem.h 
+
+- Make one or more UI-components.
+-- Should never access gamestate directly.
+-- Should use GameSystemInterface for interactions.
+-- Can define Queries for geting information about gamestate (queries should never change state)
+-- Programs with different UI-components still can stay synced.
+-- Headers: GameSystemInterface.h, ThreadNotificationSystem.h, ThreadQuery.h

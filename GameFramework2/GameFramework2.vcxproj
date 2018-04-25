@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D6410D1A-9CC6-4C59-9095-6A3D56774ACD}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>GameFramework2</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="WinSock2.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="WinSock2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>NotSet</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="AllocationHelper.h" />
+    <ClInclude Include="ComponentStore.h" />
+    <ClInclude Include="ConfigSystem.h" />
+    <ClInclude Include="Cryptography.h" />
+    <ClInclude Include="ErrorCodes.h" />
+    <ClInclude Include="FieldedStruct.h" />
+    <ClInclude Include="FileSpecifier.h" />
+    <ClInclude Include="GameClient.h" />
+    <ClInclude Include="GameClientProtocol.h" />
+    <ClInclude Include="GameServer.h" />
+    <ClInclude Include="GameServerProtocol.h" />
+    <ClInclude Include="GameStateThread.h" />
+    <ClInclude Include="GameSystemInterface.h" />
+    <ClInclude Include="FunctionThreadCallback.h" />
+    <ClInclude Include="InternalMessageSender.h" />
+    <ClInclude Include="QueueBuffer.h" />
+    <ClInclude Include="ResourceThread.h" />
+    <ClInclude Include="ServerData.h" />
+    <ClInclude Include="SimpleCollection.h" />
+    <ClInclude Include="ActionProtocol.h" />
+    <ClInclude Include="NetworkThread.h" />
+    <ClInclude Include="ObjectLink2.h" />
+    <ClInclude Include="NonAssignable.h" />
+    <ClInclude Include="ObjectCollection.h" />
+    <ClInclude Include="Overview.h" />
+    <ClInclude Include="PlayerStore.h" />
+    <ClInclude Include="RelayServer.h" />
+    <ClInclude Include="SafeStatisticsLogger.h" />
+    <ClInclude Include="Serialization.h" />
+    <ClInclude Include="ThreadDeclerationsTmp.h" />
+    <ClInclude Include="ThreadNotificationSystem.h" />
+    <ClInclude Include="ThreadProxyCaller.h" />
+    <ClInclude Include="ThreadQuery.h" />
+    <ClInclude Include="ThreadSystemWin.h" />
+    <ClInclude Include="ThreadBase.h" />
+    <ClInclude Include="ThreadPreDeclarations.h" />
+    <ClInclude Include="ThreadMessageBase.h" />
+    <ClInclude Include="ThreadSystem.h" />
+    <ClInclude Include="UDPServerCore.h" />
+    <ClInclude Include="UDPServerProtocol.h" />
+    <ClInclude Include="UdpSeverCoreWin.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Cryptography.cpp" />
+    <ClCompile Include="FileSpecifier.cpp" />
+    <ClCompile Include="GameClient.cpp" />
+    <ClCompile Include="GameServer.cpp" />
+    <ClCompile Include="ActionProtocol.cpp" />
+    <ClCompile Include="GameStateThread.cpp" />
+    <ClCompile Include="GameSystemInterface.cpp" />
+    <ClCompile Include="NetworkThread.cpp" />
+    <ClCompile Include="PlayerStore.cpp" />
+    <ClCompile Include="RelayServer.cpp" />
+    <ClCompile Include="ResourceThread.cpp" />
+    <ClCompile Include="SafeStatisticsLogger.cpp" />
+    <ClCompile Include="ThreadBase.cpp" />
+    <ClCompile Include="ConfigSystem.cpp" />
+    <ClCompile Include="Serialization.cpp" />
+    <ClCompile Include="ConsoleTesting.cpp" />
+    <ClCompile Include="ThreadQuery.cpp" />
+    <ClCompile Include="ThreadPreDeclarations.cpp" />
+    <ClCompile Include="ThreadSystemWin.cpp" />
+    <ClCompile Include="UDPServerCore.cpp" />
+    <ClCompile Include="UdpSeverCoreWin.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Workflow.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
